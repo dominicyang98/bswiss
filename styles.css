@@ -1,0 +1,111 @@
+/* Add your CSS styles here as needed */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background color */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(31, 98, 211);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+    flex: 1; /* Let the main content fill the remaining space */
+    padding-bottom: 60px; /* Add padding at the bottom to avoid overlapping with footer */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(31, 98, 211);
+    color: #fff;
+    padding: 10px;
+    position: fixed; /* Make the footer fixed */
+    bottom: 0; /* Stick the footer to the bottom */
+    left: 0;
+    right: 0;
+}
+
+/* Content block layout */
+.meeting-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.time {
+    width: 20%;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    display: flex; /* Enable flexbox for centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.start-time-background {
+    background-color: rgb(31, 98, 211); /* Background color for the startTime div */
+    color: #fff; /* Text color for better visibility */
+}
+
+
+
+.detail {
+    width: 80%;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.bold-text {
+    font-weight: bold; /* Set the font weight to bold */
+}
+
+.room-closed {
+    display: flex; /* Enable flexbox for placing roomDiv and closedDiv side by side */
+}
+
+.room-closed > div {
+    flex: 1; /* Take equal space within the container */
+}
+
+.detail > div {
+    margin-bottom: 10px;
+}
+
+
+/* Media query for tablets and larger screens */
+
+
+/* Media query for phones and smaller screens */
+@media screen and (max-width: 767px) {
+    main {
+        display: block;
+    }
+    .meeting-item {
+        border: none;
+        margin-bottom: 20px;
+    }
+}
+
+/* Media query for landscape mode */
+@media screen and (orientation: landscape) {
+    header {
+        font-size: 12px; 
+        padding: 5px; 
+    }
+    
+    footer {
+        font-size: 12px; /* Reduce the font size for the footer */
+        padding: 5px; /* Reduce the padding for the footer */
+    }
+}
