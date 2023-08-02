@@ -42,7 +42,19 @@ setInterval(updateFooter, 1000);
 function displayContent(content) {
   const meetingContent = document.getElementById('meeting-content');
 
-  content.forEach(item => {
+    // Define the set of allowed room values
+    const allowedRooms = new Set([
+        'AH', 'CC', 'I', 'II', 'III', 'IV', 'IX', 'S1', 'S3', 'S4',
+        'Salle 100', 'Salle 101', 'Salle 102', 'Salle 103', 'Salle 104', 'Salle 105',
+        'Salle 106', 'Salle 200', 'Salle 201', 'Salle 202', 'Salle 203', 'Salle 204',
+        'Salle 205', 'Tempus', 'V', 'VI', 'VII', 'VIII', 'X', 'XI', 'XII', 'XIV',
+        'XIX', 'XV', 'XVI', 'XVII', 'XVIII', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIV',
+        'XXV', 'XXVI', 'XXVII'
+    ]);
+
+  content
+      .filter(item => allowedRooms.has(item.room))
+      .forEach(item => {
       const itemDiv = document.createElement('div');
       itemDiv.classList.add('meeting-item');
 
@@ -59,21 +71,21 @@ function displayContent(content) {
       detailDiv.classList.add('detail');
 
       const organAcronymDiv = document.createElement('div');
-      organAcronymDiv.textContent = item.organAcronym;
+      organAcronymDiv.textContent = item.frenchOrganAcronym;
       organAcronymDiv.classList.add('bold-text'); // Add the bold-text
 
       const shortTitleDiv = document.createElement('div');
-      shortTitleDiv.textContent = item.shortTitle;
+      shortTitleDiv.textContent = item.frenchShortTitle;
 
       const roomClosedDiv = document.createElement('div');
       roomClosedDiv.classList.add('room-closed');
 
       const roomDiv = document.createElement('div');
-      roomDiv.textContent = `Salle / Room: ${item.room}`;
+      roomDiv.textContent = `Salle: ${item.room}`;
 
       const closedDiv = document.createElement('div');
       // Replace "Y" with "Yes" and "N" with "No" for item.closed property
-      closedDiv.textContent = `Public: ${item.closed === "Y" ? "Yes" : "No"}`;
+      closedDiv.textContent = `Public: ${item.closed === "Y" ? "Oui" : "Non"}`;
 
       roomClosedDiv.appendChild(roomDiv);
       roomClosedDiv.appendChild(closedDiv);

@@ -17,10 +17,28 @@ header {
     padding: 10px;
 }
 
+.language-links {
+    display: flex;
+    float: right;
+}
+
+.language-links a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Add an underline, initially transparent */
+    transition: border-color 0.2s; /* Smooth transition for underline on hover */
+}
+
+.language-links a:hover {
+    border-color: #fff; /* Show underline on hover */
+}
+
+
 main {
     padding: 20px;
     flex: 1; /* Let the main content fill the remaining space */
-    padding-bottom: 60px; /* Add padding at the bottom to avoid overlapping with footer */
+    padding-bottom: 100px; /* Add padding at the bottom to avoid overlapping with footer */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
@@ -100,12 +118,12 @@ footer {
 /* Media query for landscape mode */
 @media screen and (orientation: landscape) {
     header {
-        font-size: 12px; 
+        font-size: 16px; 
         padding: 5px; 
     }
     
     footer {
-        font-size: 12px; /* Reduce the font size for the footer */
+        font-size: 16px; /* Reduce the font size for the footer */
         padding: 5px; /* Reduce the padding for the footer */
     }
 }
